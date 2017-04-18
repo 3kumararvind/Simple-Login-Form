@@ -1,92 +1,51 @@
+<!DOCTYPE HTML>
+<lang="en">
 <html>
-    <head><title>Login Details</title>
-    <style>
-        .log{
-            background-color:darkseagreen;
-            width:450px;
-            height: auto;
-            margin-left: 400px;
-            margin-top: 200px;
-            }
-        .log fieldset{
-            border-radius: 16px;
-            border-color: blue;
-        }
-        .log legend{
-            
-            text-align: center;
-            font-family: sans-serif;
-            
-        }
-        .log label
-        {
-            padding-left:50px;
-            font-weight: bolder;
-            font-family: monospace;
-            padding-top: 40px;
-            
-        }
-       #userinput input
-        {
-            width: 250px;
-            height:25px;
-            border-radius: 5px;
-            margin-left: 20px;
-            padding-left:15px;
-            
-        }
-        #userpwd input
-        {
-            width: 250px;
-            height:25px;
-            border-radius: 5px;
-            margin-left: 14px;
-            margin-top: 20px;
-            padding-left: 15px;
-        }
-        #login input[type="button"]{
-            margin-left: 145px;
-            margin-top: 20px;
-            border-color: blue;
-            font-size: 15px;
-            font-family:cursive;
-            background-color:lightcoral;
-        }
-       #login input[type="reset"]{
-            margin-left: 40px;
-            margin-top: 20px;
-            border-color: blue;
-           font-size: 15px;
-           font-family:cursive;
-           background-color:lightcoral;
-           
-        }
-       
-        
-    </style>
-    
-    </head>
-    <body>
-        <div class="log">
-            <fieldset>
-                <legend>Log in to continue:</legend>
-                <form>
-                    <div id="userinput">
-                        <label>User id:</label><input type="text" name="user id" placeholder="Enter user id"><br>
-                    </div>
-                    <div id="userpwd">
-                        <label>Password:</label><input type="password" name="user password" value="arvindkumar"><br>
-                    </div>
-                    <div id="Login">                        
-                        <input type="button" name="submit button" value="LOGIN">
-                        <input type="reset" name="reset button" value="RESET">
-                        
-                    </div>
-                                            
-                </form>
-            
-            </fieldset>
-        
-        </div>
-    </body>
+<head>
+	<title>Login form</title>
+	<script >
+		function validate_user()
+		{
+			var x=document.forms["myform"]["username"].value;
+			var y=document.forms["myform"]["pwd"].value;
+			if(x==null||x==""||y==null||y=="")
+			{
+				alert("Fields cannot be empty");
+			}
+			else 
+			{
+				if(x=="arvind")
+				{
+					if(y=="123")
+					{
+						alert("You have logged in successfully:");
+					}
+					else
+					{
+						alert("Password missmatch");
+					}
+				}
+				else
+				{
+					if(y=="123")
+					{
+						alert("User doesnot exist");
+					}
+				}
+			}
+			if(x!="arvind" && y!="123")
+			alert("Invalid input");
+				alert("Invalid input");
+					
+		}
+	</script>
+</head>
+<body>
+	<form name="myform" onsubmit="validate_user()" method="post">
+		User name:<input type="text" name="username" placeholder="Username"><br>
+		password:<input type="password" name="pwd"><br>
+		<input type="submit" value="SUBMIT">
+	</form>
+
+</body>
 </html>
